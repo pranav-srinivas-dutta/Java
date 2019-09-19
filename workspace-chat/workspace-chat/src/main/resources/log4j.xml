@@ -15,6 +15,11 @@
 		<level value="info" />
 	</logger>
 	
+	<!-- Application Loggers -->
+	<logger name="User">
+		<level value="info" />
+	</logger>
+	
 	<!-- 3rdparty Loggers -->
 	<logger name="org.springframework.core">
 		<level value="info" />
