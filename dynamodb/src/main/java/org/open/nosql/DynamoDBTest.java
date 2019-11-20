@@ -28,16 +28,17 @@ import com.amazonaws.services.dynamodbv2.model.ScalarAttributeType;
 public class DynamoDBTest {
 
 	public static void main(String[] args) throws AdapterException {
-		DynamoAdapter.initializeDynamoAdapter();
+		DynamoAdapter.initializeDynamoAdapter("/home/pranav/Documents/repositories/git/personal/Java/dynamodb/src/main/resources/dynamo.properties");
 
 		/*
 		 * CreateAdapter c= DynamoAdapter.fetchCreateAdapter(); c.create("Advisors");
 		 */
 		
 		Map<String, String> primaryMap= new HashMap<String, String> ();
-		primaryMap.put("adivisor_code", "AG0010");
-		primaryMap.put("channel_code", "CH0003");
-		
+		primaryMap.put("adivisor_code", "AG0014");
+		primaryMap.put("channel_code", "CH0007");
+		primaryMap.put("phone_number", "94421442222");
+		primaryMap.put("email", "pranav@pranav.com.");
 		
 		Map<String, String> infoMap= new HashMap<String, String> ();
 		infoMap.put("city", "vellore");
@@ -49,7 +50,8 @@ public class DynamoDBTest {
 		//DynamoDBTest.insert();
 
 		GetAdapter g = DynamoAdapter.fetchGetAdapter();
-		System.out.println(g.get("Advisors", "adivisor_code", "channel_code", "AG0010", "CH0003"));
+		System.out.println(g.get("Advisors", "adivisor_code", "channel_code", "AG0014", "CH0007"));
+		System.out.println(g.get("Advisors", "adivisor_code", "channel_code", "phone_number#9442144222", "phone_number#9442144222"));
 	}
 
 	public static void update() {
